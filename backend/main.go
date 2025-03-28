@@ -55,7 +55,22 @@ type Education struct {
 var db *sql.DB
 
 func main() {
-	connStr := "user=postgres dbname=Cursovoy sslmode=disable password=Djcmvfv583746 host=localhost port=5432"
+	if err := godotenv.Load(); err != nil {
+		log.Fatal("Ошибка загрузки .env файла")
+	}
+
+	connStr := fmt.Sprintf(
+		"host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
+		os.Getenv("DB_HOST"),
+		os.Getenv("DB_PORT"),
+		os.Getenv("DB_USER"),
+		os.Getenv("DB_PASSWORD"),
+		os.Getenv("DB_NAME"),
+		os.Getenv("SSL_MODE"),
+	)
+
+	fmt.Println("Connection string:", connStr)
+
 	var err error
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {
@@ -71,10 +86,6 @@ func main() {
 	fmt.Println("Подключение к PostgreSQL успешно!")
 
 	r := gin.Default()
-
-	if err := godotenv.Load(); err != nil {
-		log.Fatal("Ошибка загрузки .env файла")
-	}
 
 	jwtSecret := os.Getenv("JWT_SECRET")
 	if jwtSecret == "" {
@@ -292,7 +303,11 @@ func main() {
 
 	r.DELETE("/api/employees/:id", deleteEmployees)
 
-	if err := r.Run(":8081"); err != nil {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8081"
+	}
+	if err := r.Run(":" + port); err != nil {
 		log.Fatalf("Ошибка при запуске сервера: %v", err)
 	}
 }
