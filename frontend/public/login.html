@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/images/academy.jpg">
+</head>
+<body>
+    <img class="stars" src="static/images/stars.jpg">
+    <header>
+        <div class="logo-container">
+            <img src="/static/images/academy.jpg" alt="StackMusic" class="logo">
+        </div>
+    </header>
+    <div class="auth-form">
+        <h1>Вход</h1>
+        <form action="" method="POST" id="loginForm">
+            <div class="error-message" id="errorMessage"></div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Пароль" required minlength="8">
+            </div>
+            <button type="submit" class="button" id="login">Продолжить</button>
+        </form>
+        <div class="additional-links">
+            <a href="/reset-password">Забыли пароль?</a>
+            <a href="/register">Создать аккаунт</a>
+            <a href="/help">Нужна помощь?</a>
+        </div>
+    </div>
+    <footer class="auth-footer">
+        <ul class="auth-footerUlLinksForPrivacy">
+            <li>
+                <a href="/politics" id="privacyPolicyLinkFooter">Политика конфиденциальности</a>
+            </li>
+            <li>
+                <a href="/personal" id="conditionsLinkFooter">Условия соглашения</a>
+            </li>
+        </ul>
+        <ul class="auth-footerUlText">
+            <li>
+                <p class="footertext">ООО "Академия Выдуманных Наук"</p>
+            </li>
+            <li>
+                <p class="footertext">Все права защищены</p>
+            </li>
+        </ul>
+        <ul class="auth-footerUlLinksSocial">
+            <li>
+                <a href="https://vk.com/cppproger" aria-label="Ссылка на ВК">
+                    <img src="/static/images/VK.png" alt="ВК">
+                </a>
+            </li>
+            <li>
+                <a href="https://t.me/gkaStack" aria-label="Ссылка на Телеграмм">
+                    <img src="/static/images/Telegram.png" alt="Телеграмм">
+                </a>
+            </li>
+        </ul>
+    </footer>
+        <script defer src="/static/js/login.js"></script>
+</body>
+</html>

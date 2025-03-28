@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <script src="/static/js/register.js"></script>
+    <link rel="icon" type="image/x-icon" href="/static/images/academy.jpg">
+</head>
+<body>
+    <img class="stars" src="static/images/stars.jpg">
+    <header>
+        <div class="logo-container">
+            <a href="/" aria-label="Вернуться на главную">
+                <img src="/static/images/academy.jpg" alt="StackMusic" class="logo">
+            </a>
+        </div>
+    </header>
+    <main class="auth-form">
+        <h1>Регистрация</h1>
+        <form id="registration" method="POST" onsubmit="handleSubmit(event)">
+            <div class="input-group">
+                <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="example@mail.com" 
+                    required
+                >
+            </div>
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Пароль" 
+                    required
+                    minlength="8"
+                >
+            </div>
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="username" 
+                    placeholder="Имя" 
+                    required
+                >
+            </div>
+            <div class="input-group consent-box">
+                <label class="container">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    <span class="consent-text">
+                        Я даю согласие на обработку 
+                        <a href="/personal" id="personalDataLink">персональных данных</a>
+                        и согласен с условиями
+                        <a href="/politics" id="privacyPolicyLink">политики конфиденциальности</a>.
+                    </span>
+                </label>
+            </div>
+            <button type="submit" class="button" aria-label="Завершить регистрацию">
+                Зарегистрироваться
+            </button>
+        </form>
+        <nav class="additional-links" aria-label="Дополнительные ссылки">
+            <a href="/login">Назад к авторизации</a>
+            <a href="/help">Нужна помощь?</a>
+        </nav>
+    </main>
+</body>
+</html>

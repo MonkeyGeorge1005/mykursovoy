@@ -1,0 +1,67 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StackMusic - Главная</title>
+    <link rel = "stylesheet" type="text/css" href="../frontend/css/user.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../frontend/images/academy.jpg">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="../frontend/images/academy.jpg" alt="StackMusic" class="sidebar-logo">
+        </div>
+        <div class="user-profile">
+            <div class="avatar-container">
+                <img src="" alt="Аватар" class="user-avatar" id="userAvatar">
+            </div>
+            <span class="username" id="username">Загрузка...</span>
+        </div>
+        <nav class="sidebar-menu">
+            <a class="menu-item active">Отправить заявку</a>
+            <a class="menu-item logout">Выйти</a>
+        </nav>
+    </aside>
+    <main class="main-content" id="main-container">
+        <form id="applicationForm">
+            <h2 class="header">Заявка</h2>
+            <div class="input-group">
+                <input class="input" type="fio" id="fio" name="fio" placeholder="Фамилия Имя Отчество" required>
+            </div>
+            <div class="input-group">
+                <input class="input" type="age" id="age" name="age" placeholder="Полных лет" required minlength="1">
+            </div>
+            <div class="input-group">
+                <span class="label" for="job_title">Должность</span>
+                <select class="input" id="job_title" name="job_title" required>
+                    <option value="" disabled selected>Выберите должность</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span class="label" for="subdivision">Подразделение</span>
+                <select class="input" id="subdivision" name="subdivision" required>
+                    <option value="" disabled selected>Выберите подразделение</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <input class="input" type="overall_experience" id="overall_experience" name="overall_experience" placeholder="Общий стаж" required minlength="1">
+            </div>
+            <div class="input-group">
+                <input class="input" type="s_p_experience" id="s_p_experience" name="s_p_experience" placeholder="Научно-преподавательский стаж" required minlength="1">
+            </div>
+
+            <div class="input-group">
+                <button class="add-to-container" type="button" id="addLanguage" class="add-button">Добавить язык</button>
+            </div>
+            <div id="languages-container"></div>
+
+            <div class="input-group">
+                <button class="add-to-container" type="button" id="addEducation" class="add-button">Добавить образование</button>
+            </div>
+            <div id="educations-container"></div>
+
+            <button type="submit" class="button" id="login">Отправить заявку</button>
+        </form>
+    </main>
+    <script src="static/js/user.js" defer></script>
+</body>

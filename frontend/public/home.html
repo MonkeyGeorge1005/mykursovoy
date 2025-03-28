@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StackMusic - Описание</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/images/StackMusic.png">
+    <script src="/static/js/home.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/" aria-label="Вернуться на главную">
+                <img src="/static/images/StackMusicLogo.png" alt="StackMusic" class="logo">
+            </a>
+        </div>
+        <div class="links-pages">
+            <ul class="home-links">
+                <li><a href="/" id="home">Главная</a></li>
+                <li><a href="/main" id="music">Музыка</a></li>
+                <li><a href="/about" id="about">О нас</a></li>
+                <li><a href="/shop" id="shop">Магазин</a></li>
+            </ul>
+        </div>
+        <div class="login-reg">
+            <button type="button" id="login" onclick="toLogin()">Log In</button>
+            <button type="button" id="reg" onclick="toReg()">Sign Up</button>
+        </div>
+    </header>
+    <div class="firstHome">
+        <img src="/static/images/stars.jpg" id="stars">
+        <p id="first-paragraph">Просто слушай и наслаждайся.</p>
+        <button class="getstarted" onclick="toLogin()">Давай начнём!</button>
+    </div>
+</body>
+</html>

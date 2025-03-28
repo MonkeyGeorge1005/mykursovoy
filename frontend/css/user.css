@@ -1,0 +1,225 @@
+/* слева менюшка */
+.sidebar {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.logo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    height: 100px;
+}
+
+.sidebar-logo {
+    position: relative;
+    margin: 25px;
+    background-color: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: 2px solid #1db954;
+    padding: 10px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.avatar-container {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:hover {
+    background: rgba(29, 185, 84, 0.1);
+    color: #1db954;
+}
+
+.menu-item.active {
+    background: #1db954;
+    color: #fff;
+    font-weight: 600;
+}
+
+.logout {
+    border: 2px solid #f00;
+    border-radius: 8px;
+}
+
+.logout:hover {
+    background: #f00;
+    color: #fff;
+}
+
+/* главное меню */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #000;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.header {
+    font-size: 3rem;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    display: block;
+    align-items: center;
+}
+
+.input {
+    width: 300px;
+    padding: 14px;
+    border: 1px solid #535353;
+    border-radius: 6px;
+    background: #181818;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.label {
+    color: #fff;
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.input:focus {
+    border-color: #1db954;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.2);
+    outline: none;
+}
+
+.add-to-container {
+    width: 300px;
+    padding: 14px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #1db954;
+    transition: transform 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+}
+
+.button {
+    width: 300px;
+    padding: 14px;
+    background: #1db954;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+}
+
+.add-to-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+    background: #1db954;
+}
+
+.input.language {
+    margin: 0 10px;
+}
+
+.remove-button {
+    background: #000;
+    border: 2px solid #f00;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 14px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    transform: scale(1.05);
+    background: #f00;
+    box-shadow: 0 4px 15px rgba(243, 25, 25, 0.589);
+}

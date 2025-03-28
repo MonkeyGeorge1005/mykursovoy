@@ -1,0 +1,118 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявки</title>
+    <link rel = "stylesheet" type="text/css" href="/static/css/employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/images/academy.jpg">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="static/images/academy.jpg" alt="StackMusic" class="sidebar-logo">
+        </div>
+        <div class="user-profile">
+            <div class="avatar-container">
+                <img src="" alt="Аватар" class="user-avatar" id="userAvatar">
+            </div>
+            <span class="username" id="username">Загрузка...</span>
+        </div>
+        <nav class="sidebar-menu">
+            <button id="mail" class="menu-item active">Входящие заявки</button>
+            <button id="employee_table" class="menu-item">Сотрудники</button>
+            <button id="subdiv_table" class="menu-item">Подразделения</button>
+            <button id="job_title_table" class="menu-item">Должности</button>
+            <a href="/login" class="menu-item logout">Выйти</a>
+        </nav>
+    </aside>
+    <main class="main-content" id="main-container">
+        <section class="not-read">
+            <h2 class="header-not-read">Непрочитанные</h2>
+            <div class="not-read-container">
+                <div class="not-read-list" id="notReadList">
+                </div>
+            </div>
+        </section>
+        <section class="read">
+            <h2 class="header-read">Прочитанные</h2>
+            <div class="read-container">
+                <div class="read-list" id="readList">
+                </div>
+            </div>
+        </section>
+        <div class="table-employee-sidebar">
+            <table id="employeesTable">
+                <thead>
+                <tr>
+                    <th data-type="number">ID</th>
+                    <th data-type="string">ФИО</th>
+                    <th data-type="number">Возраст</th>
+                    <th data-type="number">Должность</th>
+                    <th data-type="number">Подразделение</th>
+                    <th data-type="number">Общий стаж</th>
+                    <th data-type="number">Научно-педагогический стаж</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="editFormEmployees" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <input type="text" id="editFio" placeholder="ФИО">
+                <input type="number" id="editAge" min="0" placeholder="Возраст">
+                <input type="number" id="editJobTitle" min="1" placeholder="ID должности">
+                <input type="number" id="editSubdivision" min="1" placeholder="ID подразделения">
+                <input type="number" id="editOverallExp" min="0" placeholder="Общий опыт">
+                <input type="number" id="editSPExp" min="0" placeholder="Опыт в СП">
+                <button onclick="saveEdit()">Сохранить</button>
+            </div>
+            <div class="filter-form">
+                <input class="filter-input" type="number" id="idFilter" min="1" placeholder="ID"/>
+                <input class="filter-input" type="text" id="fioFilter" placeholder="ФИО"/>
+                <input class="filter-input" type="number" id="ageFilter" min="0" placeholder="Возраст"/>
+                <input class="filter-input" type="number" id="jobTitleFilter" min="1" placeholder="ID должности"/>
+                <input class="filter-input" type="number" id="subdivisionFilter" min="1" placeholder="ID подразделения"/>
+                <input class="filter-input" type="number" id="overallFilter" min="0" placeholder="Общий стаж"/>
+                <input class="filter-input" type="number" id="s_pFilter" min="0" placeholder="Научно-педагогический стаж"/>
+                <button class="filter-button" id="applyEmployeeFilter">Применить фильтр</button>
+            </div>
+            <button id="exportDataButton" class="export-button">Экспорт данных</button>
+        </div>
+        <div class="table-subdivision-sidebar">
+            <table id="subdivisionTable">
+                <thead>
+                <tr>
+                    <th data-type="number">ID</th>
+                    <th data-type="string">Название</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="filter-form">
+                <input class="filter-input" type="number" id="idSubdivisionFilter" min="1" placeholder="ID"/>
+                <input class="filter-input" type="text" id="nameSubdivisionFilter" placeholder="Название"/>
+                <button class="filter-button" id="applySubdivisionFilter">Применить фильтр</button>
+            </div>
+        </div>
+        <div class="table-job-title-sidebar">
+            <table id="jobTitleTable">
+                <thead>
+                <tr>
+                    <th data-type="number">ID</th>
+                    <th data-type="string">Название</th>
+                    <th data-type="number">Количество</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="filter-form">
+                <input class="filter-input" type="number" id="idJobTitleFilter" min="1" placeholder="ID"/>
+                <input class="filter-input" type="text" id="nameJobTitleFilter" placeholder="Название"/>
+                <input class="filter-input" type="number" id="countJobTitleFilter" min="0" placeholder="Количество"/>
+                <button class="filter-button" id="applyJobTitleFilter">Применить фильтр</button>
+            </div>
+        </div>
+    </main>
+    <script src="static/js/employee.js" defer></script>
+</body>

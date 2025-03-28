@@ -1,0 +1,80 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявки</title>
+    <link rel = "stylesheet" type="text/css" href="../frontend/css/employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../frontend/images/academy.jpg">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="../frontend/images/academy.jpg" alt="Логотип" class="sidebar-logo">
+        </div>
+        <div class="user-profile">
+            <div class="avatar-container">
+                <img src="" alt="Аватар" class="user-avatar" id="userAvatar">
+            </div>
+            <span class="username" id="username">Загрузка...</span>
+        </div>
+        <nav class="sidebar-menu">
+            <button id="mail" class="menu-item active">Входящие заявки</button>
+            <button id="employee_table" class="menu-item">Сотрудники</button>
+            <button id="subdiv_table" class="menu-item">Подразделения</button>
+            <button id="job_title_table" class="menu-item">Должности</button>
+            <a class="menu-item logout">Выйти</a>
+        </nav>
+    </aside>
+    <main class="main-content" id="main-container">
+        <section class="not-read">
+            <h2 class="header-not-read">Непрочитанные</h2>
+            <div class="not-read-container">
+                <div class="not-read-list" id="notReadList">
+                    <div class="not-read-message">
+                        <div class="message-title">
+                            <span class="message-title-fio">Ааааааа</span>
+                        </div>
+                        <div class="message-info">
+                            <span class="message-age">Возраст: ...</span>
+                            <span class="message-job">Должность: ...</span>
+                            <span class="message-subdivision">Подразделение: ...</span>
+                            <span class="message-languages">Языки: ...</span>
+                            <span class="message-educations">Образование: ...</span>
+                            <span class="experience">Общий стаж: ... лет</span>
+                            <span class="s-p-experience">Научно-технический стаж: ... лет</span>
+                            <div class="confirm-deny">
+                                <button type="button" class="confirm-button" data-message-id="${message.bid_id}">Принять</button>
+                                <button type="button" class="deny-button" data-message-id="${message.bid_id}">Отклонить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="read">
+            <h2 class="header-read">Прочитанные</h2>
+            <div class="read-container">
+                <div class="read-list" id="readList">
+                    <div class="read-message">
+                        <div class="message-title">
+                            <span class="message-title-fio">Ааааааа</span>
+                        </div>
+                        <div class="message-info">
+                            <span class="message-age">Возраст: ...</span>
+                            <span class="message-job">Должность: ...</span>
+                            <span class="message-subdivision">Подразделение: ...</span>
+                            <span class="message-languages">Языки: ...</span>
+                            <span class="message-educations">Образование: ...</span>
+                            <span class="experience">Общий стаж: ... лет</span>
+                            <span class="s-p-experience">Научно-технический стаж: ... лет</span>
+                            <div class="confirm-deny">
+                                <button type="button" class="confirm-button" data-message-id="${message.bid_id}">Принять</button>
+                                <button type="button" class="deny-button" data-message-id="${message.bid_id}">Отклонить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>

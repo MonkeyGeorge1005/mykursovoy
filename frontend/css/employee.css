@@ -1,0 +1,387 @@
+/* слева менюшка */
+.sidebar {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.logo-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    height: 100px;
+}
+
+.sidebar-logo {
+    position: relative;
+    margin: 25px;
+    background-color: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: 2px solid #1db954;
+    padding: 10px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.avatar-container {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.username:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu-item {
+    background: none;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background: rgba(29, 185, 84, 0.1);
+    color: #1db954;
+}
+
+.menu-item.active {
+    background: #1db954;
+    color: #fff;
+    font-weight: 600;
+}
+
+.logout {
+    border: 2px solid #f00;
+    border-radius: 8px;
+}
+
+.logout:hover {
+    background: #f00;
+    color: #fff;
+}
+
+/* главное меню */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #000;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* заявки */
+
+.header-not-read, .header-read {
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.not-read-container, .read-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.not-read-list, .read-list {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.read {
+    visibility: visible;
+}
+
+.read.hidden {
+    visibility: hidden;
+}
+
+.not-read {
+    visibility: visible;
+}
+
+.not-read.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.not-read-message {
+    padding: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+}
+
+.read-message {
+    padding: 20px;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    background: #000;
+}
+
+.message-title {
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.message-title-fio {
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.message-info span {
+    color: #b3b3b3;
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.3rem;
+    white-space: nowrap;
+}
+
+.confirm-deny {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    gap: 15px;
+}
+
+.confirm-button, .deny-button, .export-button {
+    font-family: inherit;
+    padding: 16px;
+    width: 120px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-button, .export-button {
+    background: #1db954;
+    color: #fff;
+    border: none;
+}
+
+.export-button{
+    margin: 20px;
+    width: 200px;
+}
+
+.deny-button {
+    background: #f00;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.confirm-button:hover, .export-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.63);
+}
+
+.deny-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(243, 25, 25, 0.589);
+}
+
+.table-employee-sidebar, .table-job-title-sidebar, .table-subdivision-sidebar {
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 250px);
+    right: -100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.table-employee-sidebar.active, .table-job-title-sidebar.active, .table-subdivision-sidebar.active {
+    right: 0;
+}
+
+#employeesTable, #jobTitleTable, #subdivisionTable {
+    width: calc(100% - 40px);
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+#employeesTable th, #employeesTable td, #jobTitleTable th, #subdivisionTable th, #jobTitleTable td, #subdivisionTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#employeesTable th, #jobTitleTable th, #subdivisionTable th {
+    background-color: #1db954;
+    position: relative;
+}
+
+#employeesTable th:hover, #jobTitleTable th:hover, #subdivisionTable:hover {
+    background-color: #27eb6b;
+}
+
+#employeesTable th::after, #jobTitleTable th::after, #subdivisionTable th::after {
+    content: '↕';
+    position: absolute;
+    right: 8px;
+    color: #999;
+}
+
+.filter-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    gap: 30px;
+}
+
+.filter-input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #535353;
+    border-radius: 6px;
+    background: #181818;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.filter-input:focus {
+    border-color: #1db954;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.2);
+    outline: none;
+}
+
+.filter-button {
+    flex: 1;
+    font-family: inherit;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #1db954;
+    color: #fff;
+    border: none;
+}
+
+.filter-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.63);
+}
+
+.changebutton, .deletebutton {
+    font-family: inherit;
+    padding: 10px;
+    width: 100px;
+    color:#fff;
+    border:none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.changebutton {
+    background-color: #d3eb01;
+}
+
+.changebutton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgb(255, 238, 2);
+}
+
+.deletebutton {
+    background-color: #f00;
+}
+
+.deletebutton:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(243, 25, 25, 0.589);
+}
+
+#editFormEmployees {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
