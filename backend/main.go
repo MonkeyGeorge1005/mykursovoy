@@ -307,6 +307,9 @@ func main() {
 	if port == "" {
 		port = "8081"
 	}
+
+	fmt.Printf("Сервер запущен на порту %s\n", port)
+
 	if err := r.Run(":" + port); err != nil {
 		log.Fatalf("Ошибка при запуске сервера: %v", err)
 	}
