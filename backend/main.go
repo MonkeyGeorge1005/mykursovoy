@@ -109,7 +109,7 @@ func main() {
 
 	r.Static("/static", "../frontend")
 
-	r.GET("/login", func(c *gin.Context) {
+	r.GET("/", func(c *gin.Context) {
 		c.File("../frontend/public/login.html")
 	})
 	r.GET("/register", func(c *gin.Context) {
@@ -291,7 +291,7 @@ func main() {
 
 	r.POST("/register", RegisterHandler)
 
-	r.POST("/login", AuthHandler)
+	r.POST("/", AuthHandler)
 
 	r.POST("/api/accept-application/:id", AuthMiddleware(jwtSecret), acceptRequest)
 
