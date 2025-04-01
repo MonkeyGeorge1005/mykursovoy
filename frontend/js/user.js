@@ -186,7 +186,7 @@ document.querySelector('.logout').addEventListener('click', async (event) => {
         if (!response.ok) {
             throw new Error('Ошибка при выходе');
         }
-        window.location.href = '/login';
+        window.location.href = '/';
     } catch (error) {
         console.error('Ошибка при выходе:', error);
         alert('Не удалось выйти');
